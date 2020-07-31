@@ -2,6 +2,6 @@
 Got annoyed at the time logging in and out from my router just to reboot it<br>
 Enter username & password before using<br><br>
 <code>
-pip3 install -r requirements.txt<br><br>
-python3 reboot.py
+pip3 install -r requirements.txt <br>
+<br> python3 reboot.py
 </code>
