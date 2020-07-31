@@ -4,7 +4,7 @@ Enter username & password before using<br>
 > Host Name: 	ZyXEL P-2601HN-F1<br>
 > Model Name: 	P-2601HN-F1<br>
 > Firmware Version: 	V3.00(BLR.8)
-<br>
+
 ### Use
 
 ```shell
