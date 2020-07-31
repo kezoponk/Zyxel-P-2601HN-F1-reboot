@@ -6,6 +6,7 @@ Enter username & password before using<br>
 > Firmware Version: 	V3.00(BLR.8)
 <br>
 ### Use
+
 ```shell
 pip3 install -r requirements.txt
 python3 reboot.py
