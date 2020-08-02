@@ -9,7 +9,7 @@ target_url = 'http://192.168.1.254'
 if_contains_then_valid = ['<script>window.location="indexMain.cgi"</script>']
 if_contains_then_invalid = []
 
-def rebootzyxel():
+def reboot_zyxel():
     # Create a session
     s = requests.Session()
     
@@ -32,14 +32,14 @@ def rebootzyxel():
         
         # Turn page into a dictionary
         soup = BeautifulSoup(r.text, features="html.parser")
-        sessionKey = soup.find('input',attrs = {'name':'sessionKey'})['value']
+        session_key = soup.find('input',attrs = {'name':'sessionKey'})['value']
         
         # Posting with the right data
         output = s.post(target_url+'/rpSysReboot.cgi', data={
-            'sessionKey': sessionKey,
+            'sessionKey': session_key,
             'isReset': 1
         })
         print('Router rebooting')
 
 if __name__ == "__main__":
-    rebootzyxel()
+    reboot_zyxel()
