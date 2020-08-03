@@ -1,5 +1,6 @@
 # Zyxel-P-2601HN-F1-reboot
-***Why?*** Got annoyed at the time logging in to my router just to reboot it<br>
+**Why?**<br>
+Got annoyed at the time logging in to my router just to reboot it<br>
 Enter username & password before using<br>
 
 **Tested only on** <br>
