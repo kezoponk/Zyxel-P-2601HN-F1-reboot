@@ -1,5 +1,5 @@
 # Zyxel-P-2601HN-F1-reboot
-**Why?**<br>
+Enter username & password before using<br>
 Got annoyed at the time logging in to my router just to reboot it<br>
 
 **Tested only on** <br>
@@ -12,4 +12,3 @@ Got annoyed at the time logging in to my router just to reboot it<br>
 pip3 install -r requirements.txt
 python3 reboot.py
 ```
-Enter username & password before using
