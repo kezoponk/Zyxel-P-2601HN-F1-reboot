@@ -7,35 +7,32 @@ target_password = '9A4H49YTFHRK9'
 target_url = 'http://192.168.1.254'
 
 if_contains_then_valid = ['<script>window.location="indexMain.cgi"</script>']
-if_contains_then_invalid = []
 
 def reboot_zyxel():
     # Create a session
-    s = requests.Session()
+    session = requests.Session()
     
     # Post login form
-    response = s.post(target_url+'/login.cgi', allow_redirects=False, data={
+    print('Trying password '+target_password+' on '+target_username)
+    response = session.post(target_url+'/login.cgi', allow_redirects=False, data={
     	'UserName': target_username,
     	'hiddenPassword': target_password,
         'loginPassword': "ZyXEL ZyWALL Series",
         'submitValue': "1",
         'Submit': "Login"
     })
-    print('Trying password '+target_password+' on '+target_username)
-    contains_valid = any(if_contain_then_valid in str(response.content) for if_contain_then_valid in if_contains_then_valid)
-    contains_invalid = any(if_contain_then_invalid in str(response.content) for if_contain_then_invalid in if_contains_then_invalid)
     
     # If user & password correct then login
-    if contains_valid and not contains_invalid:
+    if any(if_contain_then_valid in str(response.content) for if_contain_then_valid in if_contains_then_valid):
         # Get reboot page
-        r = s.get(target_url+'/rpSysReboot.cgi')
+        reboot_page = session.get(target_url+'/rpSysReboot.cgi')
         
         # Turn page into a dictionary
-        soup = BeautifulSoup(r.text, features="html.parser")
+        soup = BeautifulSoup(reboot_page.text, features="html.parser")
         session_key = soup.find('input',attrs = {'name':'sessionKey'})['value']
         
         # Posting with the right data
-        output = s.post(target_url+'/rpSysReboot.cgi', data={
+        output = session.post(target_url+'/rpSysReboot.cgi', data={
             'sessionKey': session_key,
             'isReset': 1
         })
