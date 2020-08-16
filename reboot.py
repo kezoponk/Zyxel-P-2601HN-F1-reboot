@@ -21,7 +21,6 @@ def reboot_zyxel():
         'submitValue': "1",
         'Submit': "Login"
     })
-    
     # If user & password correct then login
     if any(if_contain_then_valid in str(response.content) for if_contain_then_valid in if_contains_then_valid):
         # Get reboot page
