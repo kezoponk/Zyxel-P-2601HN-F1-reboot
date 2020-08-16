@@ -1,4 +1,4 @@
-[![WTFPL 2.0][https://img.shields.io/badge/License-WTFPL%202.0-lightgrey.svg?style=flat-square]][http://www.wtfpl.net]
+[![WTFPL 2.0](https://img.shields.io/badge/License-WTFPL%202.0-lightgrey.svg?style=flat-square)](http://www.wtfpl.net)
 # Zyxel-P-2601HN-F1-reboot
 Got annoyed at the time logging in to my router just to reboot it<br>
 Enter username & password before using<br>
