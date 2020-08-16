@@ -1,12 +1,10 @@
 import requests
 from bs4 import BeautifulSoup
 
-# Arguments
+# Configure
 target_username = 'user'
 target_password = '9A4H49YTFHRK9'
 target_url = 'http://192.168.1.254'
-
-if_contains_then_valid = ['<script>window.location="indexMain.cgi"</script>']
 
 def reboot_zyxel():
     # Create a session
@@ -23,7 +21,7 @@ def reboot_zyxel():
     })
     
     # If user & password correct then login
-    if any(if_contain_then_valid in str(response.content) for if_contain_then_valid in if_contains_then_valid):
+    if '<script>window.location="indexMain.cgi"</script>' in str(response.content):
         # Get reboot page
         reboot_page = session.get(target_url+'/rpSysReboot.cgi')
         
