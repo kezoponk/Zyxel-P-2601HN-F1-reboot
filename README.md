@@ -1,4 +1,4 @@
-# Zyxel P-2601HN-F1 Reboot <a href="http://www.wtfpl.net" target="_blank"> <img src="https://img.shields.io/badge/License-WTFPL%202.0-lightgrey.svg?style=flat-square"> </a>
+# Zyxel P-2601HN-F1 Reboot [![WTFPL 2.0](https://img.shields.io/badge/License-WTFPL%202.0-lightgrey.svg?style=flat-square)](http://www.wtfpl.net)
 Got annoyed at the time logging in to my router just to reboot it<br>
 Enter username & password before using<br>
 
