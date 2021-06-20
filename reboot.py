@@ -7,7 +7,7 @@ target_password = '9A4H49YTFHRK9'
 target_url = 'http://192.168.1.254'
 
 def reboot_zyxel():
-    # Create a session
+    # Start session
     session = requests.Session()
     
     # Post login form
@@ -25,11 +25,11 @@ def reboot_zyxel():
         # Get reboot page
         reboot_page = session.get(target_url+'/rpSysReboot.cgi')
         
-        # Turn page into a dictionary
+        # Parse html to be accessed as dictionary
         soup = BeautifulSoup(reboot_page.text, features="html.parser")
         session_key = soup.find('input',attrs = {'name':'sessionKey'})['value']
         
-        # Posting with the right data
+        # Post with required values
         output = session.post(target_url+'/rpSysReboot.cgi', data={
             'sessionKey': session_key,
             'isReset': 1
